@@ -7,3 +7,5 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 add_executable(helloworld ${test_sources})
 target_link_libraries(helloworld sf-pack)
+
+add_executable(test-2 test-2.c)

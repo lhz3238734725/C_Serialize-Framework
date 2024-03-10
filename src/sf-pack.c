@@ -247,9 +247,11 @@ int sf_unpack_free(void *p IN, sf_pack_info_t *infos IN, uint64_t n_infos IN){
                 }
             }
 
-            printf("[unpack_free] free memory %p\n", array);
-            free(array);
-            array = NULL;
+            if(array != NULL){
+                printf("[unpack_free] free memory %p\n", array);
+                free(array);
+                array = NULL;
+            }
             continue;
         }
 
@@ -263,8 +265,10 @@ int sf_unpack_free(void *p IN, sf_pack_info_t *infos IN, uint64_t n_infos IN){
     }
     
     // 释放内存
-    printf("[unpack_free] free memory %p\n", p);
-    free(p);
-    p = NULL;
+    if(p != NULL){
+        printf("[unpack_free] free memory %p\n", p);
+        free(p);
+        p = NULL;
+    }
     return SF_SUCCESS;
 } 

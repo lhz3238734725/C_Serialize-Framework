@@ -28,6 +28,11 @@ vinfo_t A_info[] = {
     VINFO(A, val_3)
 };
 
+typedef struct B {
+    int a;
+    int b;
+} B;
+
 int main(int argc, char **argv){
 
     printf("val1 offset:%ld size:%ld\n" ,OFFSET(A, val_1), SIZEOF(A, val_1));
@@ -38,6 +43,11 @@ int main(int argc, char **argv){
     {
         printf("name: %s offset: %ld size: %ld\n", A_info[i].name, A_info[i].offset, A_info[i].size);
     }
+
+    B b;
+    b.a = 1;
+    b.b = 2;
+    printf("%d %d\n",OFFSET(B, b), *(uint32_t*)((void*)&b + OFFSET(B, b)));
     
     return 0;
 }

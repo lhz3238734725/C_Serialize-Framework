@@ -1,6 +1,7 @@
 set(sf_target_name sf-pack)
 
 set(sf_headers /
+    sf-def.h /
     sf-pack.h /
     )
 

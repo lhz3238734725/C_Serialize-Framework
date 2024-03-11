@@ -12,7 +12,7 @@ typedef struct sf_pack_info_s sf_pack_info_t;
 // 结构体成员信息 
 struct sf_pack_info_s
 {
-    char *name;                 // 名称
+    const char *name;           // 名称
     uint64_t size;              // 偏移量
     uint64_t offset;            // 大小
     int64_t noffset;            // 用于数组，数组长度的偏移量
